@@ -1,0 +1,453 @@
+
+/* default */
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Vazir";
+}
+
+
+
+
+button{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+body{
+    width: 100vw;
+    height: 100%;
+}
+
+#index{
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100%;
+   
+}
+:root{
+    --searchBTNColor:rgb(34, 188, 235);
+    --borderBottom:rgba(0, 0, 0, 0.1);
+    --red:rgb(247, 72, 81);
+    --red2:red;
+    font-size: 16px;
+    --white:white;
+    --black:black;
+    --itemsTitle:blue;
+    --navBGColor:rgb(33, 178, 226);
+    --footerTitle:rgb(3, 3, 3);
+    --wheat:wheat;
+    --footerLINKBC:rgb(25, 88, 130);
+
+}
+
+
+@font-face{
+    font-family: "Vazir";
+    src: url("./Font/Vazir.eot")
+}
+
+
+/* classes*/
+.flex{
+    display: flex;
+}
+.block{
+    display: block;
+}
+.none{
+    display: none;
+}
+
+.translateY0{
+    transform: translateY(0) !important;
+    transition: all 0.4s !important;
+}
+.trasnition1s{
+    transition: all 1s ;
+}
+
+
+/*------------------------------------------------------ header */
+#index .header{
+    width: 80vw;
+    height: 250px;
+    margin:10px auto 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+	
+}
+
+.user{
+    cursor: pointer;
+    background-color: rgba(128, 128, 128, 0.101);
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.user a{
+    color: black;
+}
+
+.user a:hover{
+    color: var(--searchBTNColor);
+}
+
+.user a:first-child{
+    border-bottom: 1px solid var(--borderBottom);
+    padding-bottom: 2px;
+}
+
+.top  .user{
+    display: block;
+}
+
+
+.header .top{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    width: 100%;
+}
+
+.top .right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80px;
+    
+}
+
+.top .right .nav{
+    border-bottom: 2px solid var(--borderBottom);
+    position: relative;
+    width: 550px;
+}
+
+
+.top .right .nav .links{
+    display: flex;
+    justify-content: space-around;
+}
+
+.right .nav .links li{
+}
+
+.right .nav .links li .link{
+    font-size: 1rem;
+    color: var(--black);
+}
+
+.right .nav .links li .link:hover{
+    color: var(--red);
+    transition: all 0.1s;
+    font-weight: bold;
+}
+
+
+.top .right  .search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 525px;
+    height: 50px;
+    box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.401);
+    margin-top: 15px;
+
+}
+
+.right .search .searchInput{
+    border:none;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(220, 220, 220, 0.242);
+    outline: none;
+    font-size: 0.9rem;
+    border-radius: 50px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: all 0.8s;
+    text-align: center;
+}
+
+.right .search .searchInput:focus{
+    border-radius: 0;
+    transition: all 0.5s;
+    text-align: right;
+
+}
+
+
+   
+
+.top .right .search button{ 
+    margin:0 10px;
+    color: var(--searchBTNColor);
+    font-size: 1rem;
+}
+
+.top .logo {
+    position: relative;   
+}
+
+.top .logo img{
+    width: 100px;
+    height: 100px;
+}
+
+
+.header #topNews{
+    width: 800px;
+    height: 120px;
+ 
+}
+
+.header #topNews img{
+    width: 100%;
+    height: 100%;
+}
+
+/* btn on small screens*/
+.showNavBTN{
+    display: none;
+    font-size: 1.5rem;
+    color: var(--searchBTNColor);
+    transform: translateY(-400%);
+    transition: all 0.1s;
+    animation-name: navBTNAnime;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.closeNavBTN{
+    position: absolute;
+    color: red;
+    font-size: 1.3rem;
+    bottom: -5%;
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 50%;
+    padding: 1px 10px;
+    display: none;
+}
+
+
+/*------------------------------------------------------ Main */
+#index .main{
+    margin: 0 auto 40px;
+    width: 80vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.main .item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 320px;
+    margin: 10px 0;
+}
+
+.main .item .title{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 20%;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+.main .item .title:hover{
+    color: var(--itemsTitle);
+}
+
+    
+.main .item .product{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 880px;
+    height: 80%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+	padding-bottom:20px;
+	
+}
+
+.main .item .product .card{
+    position: relative;
+    height: 100%;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid rgba(0, 0, 0, 0.382);
+}
+
+.product .card .itemMessage{
+    position: absolute;
+    background-color: black;
+    color:var(--red);
+    padding: 2px 10px;
+    border-radius: 20px;
+    top: 20%;
+    left: 37%;
+    transition: all 0.3s;
+    opacity: 0;
+
+}
+.main .item .product .card:hover > .itemMessage{
+    top: 0;
+    transition: all 0.3s;
+    opacity: 1;
+}
+
+.main .item .product .card .itemImage{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main .item .product .card .itemImage .image{
+    width: 130px;
+	
+}
+
+.main .item .product .card .price{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    align-items: center;
+    margin-top: 35px;
+    border-radius: 10px;
+    border: 2px solid rgb(36, 37, 36);
+    border-top: none;
+    
+}
+
+
+/*main bestItems*/
+#index .main .specialItems{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width:100%;
+    min-height: 140px;
+    border:5px solid var(--borderBottom);
+    border-bottom: none;
+    margin: 0 auto;
+    border-radius:50px;
+
+
+
+}
+
+#index .main .specialItems .new{
+    width:180px;
+    height: 100px;
+    border:4px solid var(--red) ;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.specialItems .new .specialtemImage{
+    width:80%;
+    height: 100%;
+    padding: 10px;
+    transition: all 0.3s;
+}
+.specialItems .new .specialtemImage:hover{
+    transform: scale(1.2);
+    transition: all 0.3s;
+}
+
+
+
+/*------------------------------------------------------ Footer */
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+
+    align-items: center;
+    width:100vw;
+    min-height:200px;
+    background:linear-gradient(to bottom,var(--wheat) 40%,rgba(245, 222, 179, 0.607) 45%);
+    clip-path: polygon(20% 0, 80% 0, 100% 100%, 0% 100%);    
+}
+.footer .aboutUS{
+   
+    width:100%;
+    min-height: 60px;
+    margin-bottom: 10px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.aboutUS h1{
+    color: var(--footerTitle);
+}
+.aboutUS .aboutUSText{
+    width:60%;
+    text-align: justify;
+}
+
+.footer .links{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width:80%;
+    min-height: 200px;
+    flex-wrap: wrap;
+}
+
+.footer .links .item{
+    min-width:100px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    
+}
+.footer .links .item .footerTitle{
+    color:var(--footerTitle);
+    font-weight: bold;
+    align-self: flex-end;
+    width: 100%;
+}
+.footer .links .item li.link{
+    border: 1px solid transparent;
+    background-color: var(--footerLINKBC);
+    margin-bottom: 5px;
+    border-radius: 20px;
+    width:120px
+}
+.footer .links .item li .footerLink{
+    color: white;
+    padding-right: 5px;
+}
+
+/*------------------------------------------------------ Aside */
+
